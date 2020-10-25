@@ -5,12 +5,12 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" crossorigin="anonymous")
   body
-    block content
+    
     div.ui.top.attached.tabular.menu
       a.item(href="/") Home
       a.item(href="/projects") Projects
       a.item(href="/calendar") Calendar
       a.item(href="/about") About Us
       a.item(href="/donate") Donate
-      a.ui.item Logout
-    p1 hello
+      a.item(href="/login") Log In
+    block content

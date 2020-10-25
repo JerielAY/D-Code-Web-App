@@ -26,4 +26,9 @@ router.get('/donate', function(req, res, next) {
   res.render('donate', { title: 'Donate' });
 });
 
+// Login page
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Log in' });
+});
+
 module.exports = router;
