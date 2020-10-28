@@ -5,14 +5,17 @@ block content
 
     // Log in form
     div.form.ui.form.segment
-        h3 Existing Users Log In:
-        div.field
-            label Username
-            input(placeholder='Username' name='username' type='text')
-        div.field
-            label Password
-            input(placeholder='Password' type='password' name='password')
-        div.ui.primary.submit.button Submit
+        form
+            h3 Existing Users Log In:
+            div.field
+                label Username
+                input(placeholder='Username' name='login-username' type='text')
+            div.field
+                label Password
+                input(placeholder='Password' type='password' name='login-password')
+            div.ui.blue.submit.button(type='submit' name='login-submit') Submit
+            div.ui.error.message
+            div.ui.success.message
 
     // Create account form  
     div.form.ui.form.segment
@@ -32,8 +35,35 @@ block content
             input(placeholder='Username' name='username' type='text')
         div.field
             label Password
-            input(placeholder='Password' type='password' name='password')
+            input(placeholder='Password' type='password' name='create-password')
         div.field
             label Confirm Password
-            input(placeholder='Confirm Password' type='password' name='password')
-        div.ui.primary.submit.button Submit
+            input(placeholder='Confirm Password' type='password' name='create-password')
+        div.ui.blue.submit.button Submit
+
+    script.
+        $('form')
+            .form({
+                on: 'blur',
+                fields: {
+                    username: {
+                        identifier: 'login-username',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a value'
+                        }]
+                    },
+                    password: {
+                        identifier: 'login-password',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a password'
+                        }]
+                    }
+                }
+            })
+            .submit(function(evt) {
+                console.log("Form submitted");
+                evt.preventDefault();
+                alert('submitted');
+            });
