@@ -2,10 +2,14 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/public/stylesheets/style.css')
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" crossorigin="anonymous")
+
+    // Fomantic-UI reqs
+    script(src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js')
+    link(rel='stylesheet' type='text/css' href='/semantic/dist/semantic.min.css')
+    script(src='/semantic/dist/semantic.min.js')
   body
-    
     div.ui.top.attached.tabular.menu
       a.item(href="/") Home
       a.item(href="/projects") Projects
