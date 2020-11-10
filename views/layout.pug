@@ -1,7 +1,18 @@
+//-
+  layout.pug
+  D-Code-Web-App
+  Authors: Team 4
+  Date: 10/25/2020
+  License: GPL 3.0
+
+  Contains the html elements common to every other view. Other views should extend layout.
+
 doctype html
 html
   head
     title= title
+
+    // Link to stylesheets
     link(rel='stylesheet', href='/public/stylesheets/style.css')
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" crossorigin="anonymous")
 
@@ -10,6 +21,7 @@ html
     link(rel='stylesheet' type='text/css' href='/semantic/dist/semantic.min.css')
     script(src='/semantic/dist/semantic.min.js')
   body
+    // navigation bar at top of the page
     div.ui.top.attached.tabular.menu
       a.item(href="/") Home
       a.item(href="/projects") Projects
