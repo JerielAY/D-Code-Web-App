@@ -11,45 +11,54 @@
 extends layout
 
 block content
-    h1 Log In Page
+    style(type='text/css').
+        body > .grid {
+        height: 100%;
+        }
+        .image {
+        margin-top: -100px;
+        }
+        .column {
+        max-width: 450px;
+        }
+
 
     // Log in form
-    div.form.ui.form.segment
-        form
-            h3 Existing Users Log In:
-            div.field
-                label Username
-                input(placeholder='Username' name='login-username' type='text')
-            div.field
-                label Password
-                input(placeholder='Password' type='password' name='login-password')
-            div.ui.blue.submit.button(type='submit' name='login-submit') Submit
-            div.ui.error.message
-            div.ui.success.message
+    div.ui.middle.aligned.center.aligned.grid
+        div.column
+            div.ui.large.header Existing Users Log In:
+            div.form.ui.form.segment
+                form
+                    div.field
+                        label Email
+                        input(placeholder='Email' name='login-email' type='text')
+                    div.field
+                        label Password
+                        input(placeholder='Password' type='password' name='login-password')
+                    div.ui.blue.submit.button(type='submit' name='login-submit') Submit
+                    div.ui.error.message
+                    div.ui.success.message
 
-    // Create account form  
-    div.form.ui.form.segment
-        h3 Create a new account:
-        div.two.fields
-            div.field
-                label First Name
-                input(placeholder='First Name' name='first-name' type='text')
-            div.field
-                label Last Name
-                input(placeholder='Last Name' name='last-name' type='text')
-        div.field
-            label Email
-            input(placeholder='Email' name='email' type='text')
-        div.field
-            label Username
-            input(placeholder='Username' name='username' type='text')
-        div.field
-            label Password
-            input(placeholder='Password' type='password' name='create-password')
-        div.field
-            label Confirm Password
-            input(placeholder='Confirm Password' type='password' name='create-password')
-        div.ui.blue.submit.button Submit
+            // Create account form
+            div.ui.large.header Create a New Account:
+            div.form.ui.form.segment
+                div.two.fields
+                    div.field
+                        label First Name
+                        input(placeholder='First Name' name='first-name' type='text')
+                    div.field
+                        label Last Name
+                        input(placeholder='Last Name' name='last-name' type='text')
+                div.field
+                    label Email
+                    input(placeholder='Email' name='create-email' type='text')
+                div.field
+                    label Password
+                    input(placeholder='Password' type='password' name='create-password')
+                div.field
+                    label Confirm Password
+                    input(placeholder='Confirm Password' type='password' name='create-password')
+                div.ui.blue.submit.button Submit
 
     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
     script.
