@@ -35,30 +35,11 @@ block content
                     div.field
                         label Password
                         input(placeholder='Password' type='password' name='login-password')
-                    div.ui.blue.submit.button(type='submit' name='login-submit') Submit
+                    div.ui.blue.submit.button Submit
                     div.ui.error.message
                     div.ui.success.message
-
-            // Create account form
-            div.ui.large.header Create a New Account:
-            div.form.ui.form.segment
-                div.two.fields
-                    div.field
-                        label First Name
-                        input(placeholder='First Name' name='first-name' type='text')
-                    div.field
-                        label Last Name
-                        input(placeholder='Last Name' name='last-name' type='text')
-                div.field
-                    label Email
-                    input(placeholder='Email' name='create-email' type='text')
-                div.field
-                    label Password
-                    input(placeholder='Password' type='password' name='create-password')
-                div.field
-                    label Confirm Password
-                    input(placeholder='Confirm Password' type='password' name='create-password')
-                div.ui.blue.submit.button Submit
+                div.ui.message New here? 
+                    a(href="/createaccount") Sign Up
 
     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
     script.
@@ -66,12 +47,19 @@ block content
             .form({
                 on: 'blur',
                 fields: {
+                    //rules for each field
                     username: {
-                        identifier: 'login-username',
-                        rules: [{
+                        identifier: 'login-email',
+                        rules: [
+                            {
                             type: 'empty',
                             prompt: 'Please enter a value'
-                        }]
+                            },
+                            {
+                                type   : 'email',
+                                prompt : 'Please enter a valid e-mail'
+                            }
+                        ]
                     },
                     password: {
                         identifier: 'login-password',
@@ -82,8 +70,8 @@ block content
                     }
                 }
             })
+            //TODO: Fix the submit functionality
             .submit(function(evt) {
-                console.log("Form submitted");
                 evt.preventDefault();
                 alert('submitted');
             });
