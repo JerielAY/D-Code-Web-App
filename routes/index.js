@@ -1,3 +1,10 @@
+// index.js
+// D-Code-Wep_App
+// Authors: Team 4
+// Date: 10/25/20
+// License: GPL 3.0
+// Routes the client to the correct page of the web app.
+
 var express = require('express');
 var router = express.Router();
 const { User, Event, Project } = require("../models");

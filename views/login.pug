@@ -42,3 +42,80 @@ block content
 
         div.column.grid
                
+//-
+  login.pug
+  D-Code-Web-App
+  Authors: Team 4
+  Date: 10/28/2020
+  License: GPL 3.0
+
+  Contains the html elements for the login page.
+  Also contains javascript for form validation and submission behavior.
+
+//- extends layout
+
+//- block content
+//-     style(type='text/css').
+//-         body > .grid {
+//-         height: 100%;
+//-         }
+//-         .image {
+//-         margin-top: -100px;
+//-         }
+//-         .column {
+//-         max-width: 450px;
+//-         }
+
+
+//-     // Log in form
+//-     div.ui.middle.aligned.center.aligned.grid
+//-         div.column
+//-             div.ui.large.header Existing Users Log In:
+//-             div.form.ui.form.segment
+//-                 form
+//-                     div.field
+//-                         label Email
+//-                         input(placeholder='Email' name='login-email' type='text')
+//-                     div.field
+//-                         label Password
+//-                         input(placeholder='Password' type='password' name='login-password')
+//-                     div.ui.blue.submit.button Submit
+//-                     div.ui.error.message
+//-                     div.ui.success.message
+//-                 div.ui.message New here? 
+//-                     a(href="/createaccount") Sign Up
+
+//-     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
+//-     script.
+//-         $('form')
+//-             .form({
+//-                 on: 'blur',
+//-                 fields: {
+//-                     //rules for each field
+//-                     username: {
+//-                         identifier: 'login-email',
+//-                         rules: [
+//-                             {
+//-                             type: 'empty',
+//-                             prompt: 'Please enter a value'
+//-                             },
+//-                             {
+//-                                 type   : 'email',
+//-                                 prompt : 'Please enter a valid e-mail'
+//-                             }
+//-                         ]
+//-                     },
+//-                     password: {
+//-                         identifier: 'login-password',
+//-                         rules: [{
+//-                             type: 'empty',
+//-                             prompt: 'Please enter a password'
+//-                         }]
+//-                     }
+//-                 }
+//-             })
+//-             //TODO: Fix the submit functionality
+//-             .submit(function(evt) {
+//-                 evt.preventDefault();
+//-                 alert('submitted');
+//-             });
