@@ -1,9 +1,14 @@
 extends layout
 
+
 block content
     div.ui.top.attached.tabular.menu
-      a.item(href="https://www.google.com/") Bio
-      a.item Photos
+      a.item(href="/index") Home
+      a.item Projects
       a.item Friends
       a.ui.item Logout
+      a.item.right.aligned(href="/login") Login
+    img.ui.centered.medium.image(src="/public/img/logo.jpeg")
+    .ui.large.header.centered Welcome hackers!
+
 

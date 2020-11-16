@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    div.ui.top.attached.tabular.menu
+      a.item(href="/index") Home
+      a.item Projects
+      a.item Friends
+      a.ui.item Logout
+      a.item.right.aligned(href="/login") Login
+    img.ui.centered.medium.image(src="/public/img/logo.jpeg")
+    div.ui.hidden.divider
+    div.ui.hidden.divider
+    div.ui.hidden.divider
+    div.ui.hidden.divider
+    div.ui.middle.aligned.center.aligned.three.column.grid
+        div.column.grid
+
+        div.column.grid
+            .row.grid
+                h2.ui.centered.header.grid
+                    div.content.grid Welcome to to the D-Code family!!
+                div.ui.hidden.divider
+                div.ui.hidden.divider
+                h3.content.grid Register Here!
+            div.row.grid
+                div.ui.form.large.form(action="/users/register", method="postgrid")
+                    div.ui.large.centered.segment.grid
+                        div.field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.user.icon.grid
+                                input(type="text", name="email", placeholder="your email").grid
+                        .field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.user.icon.grid
+                                input(type="text", name="name", placeholder="your name").grid    
+                        div.field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.lock.icon.grid
+                                input(type="password",name="password",placeholder="password").grid
+                        div.field.grid.row
+                            button.ui.fluid.large.black.button(type="submit").grid Register 
+        div.column.grid
+               
