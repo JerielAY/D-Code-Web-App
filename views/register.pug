@@ -1,13 +1,6 @@
 extends layout
 
 block content
-    div.ui.top.attached.tabular.menu
-      a.item(href="/index") Home
-      a.item Projects
-      a.item Friends
-      a.ui.item Logout
-      a.item.right.aligned(href="/login") Login
-    img.ui.centered.medium.image(src="/public/img/logo.jpeg")
     div.ui.hidden.divider
     div.ui.hidden.divider
     div.ui.hidden.divider
@@ -23,7 +16,7 @@ block content
                 div.ui.hidden.divider
                 h3.content.grid Register Here!
             div.row.grid
-                div.ui.form.large.form(action="/users/register", method="postgrid")
+                div.ui.form.large.form(action="/users/register", method="post")
                     div.ui.large.centered.segment.grid
                         div.field.grid.row
                             div.ui.left.icon.input.grid
