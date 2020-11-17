@@ -1,47 +1,3 @@
-extends layout
-
-block content
-    //- div.ui.top.attached.tabular.menu
-    //-   a.item(href="/index") Home
-    //-   a.item Projects
-    //-   a.item Friends
-    //-   a.ui.item Logout
-    //-   a.item.right.aligned(href="/login") Login
-    //- img.ui.centered.medium.image(src="/public/img/logo.jpeg")
-    div.ui.hidden.divider
-    div.ui.hidden.divider
-    div.ui.hidden.divider
-    div.ui.hidden.divider
-    div.ui.middle.aligned.center.aligned.three.column.grid
-        div.column.grid
-
-        div.column.grid
-            .row.grid
-                h2.ui.centered.header.grid
-                    div.content.grid Sign in here
-            div.ui.hidden.divider
-            div.row.grid
-                div.ui.form.large.form(action="/users/login", method="post")
-                    div.ui.large.centered.segment.grid
-                        div.field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.user.icon.grid
-                                input(type="text", name="email", placeholder="your email").grid
-                        .field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.user.icon.grid
-                                input(type="text", name="name", placeholder="your name").grid    
-                        div.field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.lock.icon.grid
-                                input(type="password",name="password",placeholder="password").grid
-                        div.field.grid.row
-                            button.ui.fluid.large.black.button(type="submit").grid Login 
-                    .ui.centered.banner.grid 
-                        a.item(href="/register") New to the D-Code family? Sign up here!
-
-        div.column.grid
-               
 //-
   login.pug
   D-Code-Web-App
@@ -52,70 +8,79 @@ block content
   Contains the html elements for the login page.
   Also contains javascript for form validation and submission behavior.
 
-//- extends layout
+extends layout
 
-//- block content
-//-     style(type='text/css').
-//-         body > .grid {
-//-         height: 100%;
-//-         }
-//-         .image {
-//-         margin-top: -100px;
-//-         }
-//-         .column {
-//-         max-width: 450px;
-//-         }
+block content
+    div.ui.hidden.divider
+    div.ui.hidden.divider
+    div.ui.hidden.divider
+    div.ui.hidden.divider
 
+    form
+        div.ui.middle.aligned.center.aligned.three.column.grid
+            div.column.grid
+                .row.grid
+                    h2.ui.centered.header.grid
+                        div.content.grid Sign in here
+                div.ui.hidden.divider
+                div.row.grid
+                    div.ui.form.large.form(action="/users/login", method="post")
+                        div.ui.large.centered.segment.grid
+                            div.field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.user.icon.grid
+                                    input(type="text", name="email", placeholder="your email").grid
+                            .field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.user.icon.grid
+                                    input(type="text", name="name", placeholder="your name").grid    
+                            div.field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.lock.icon.grid
+                                    input(type="password",name="password",placeholder="password").grid
+                            div.field.grid.row
+                                button.ui.fluid.large.black.button(type="submit").grid Login 
+                        .ui.centered.banner.grid 
+                            a.item(href="/register") New to the D-Code family? Sign up here!
 
-//-     // Log in form
-//-     div.ui.middle.aligned.center.aligned.grid
-//-         div.column
-//-             div.ui.large.header Existing Users Log In:
-//-             div.form.ui.form.segment
-//-                 form
-//-                     div.field
-//-                         label Email
-//-                         input(placeholder='Email' name='login-email' type='text')
-//-                     div.field
-//-                         label Password
-//-                         input(placeholder='Password' type='password' name='login-password')
-//-                     div.ui.blue.submit.button Submit
-//-                     div.ui.error.message
-//-                     div.ui.success.message
-//-                 div.ui.message New here? 
-//-                     a(href="/createaccount") Sign Up
-
-//-     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
-//-     script.
-//-         $('form')
-//-             .form({
-//-                 on: 'blur',
-//-                 fields: {
-//-                     //rules for each field
-//-                     username: {
-//-                         identifier: 'login-email',
-//-                         rules: [
-//-                             {
-//-                             type: 'empty',
-//-                             prompt: 'Please enter a value'
-//-                             },
-//-                             {
-//-                                 type   : 'email',
-//-                                 prompt : 'Please enter a valid e-mail'
-//-                             }
-//-                         ]
-//-                     },
-//-                     password: {
-//-                         identifier: 'login-password',
-//-                         rules: [{
-//-                             type: 'empty',
-//-                             prompt: 'Please enter a password'
-//-                         }]
-//-                     }
-//-                 }
-//-             })
-//-             //TODO: Fix the submit functionality
-//-             .submit(function(evt) {
-//-                 evt.preventDefault();
-//-                 alert('submitted');
-//-             });
+    // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
+    script.
+        $('form')
+            .form({
+                on: 'blur',
+                fields: {
+                    //rules for each field
+                    username: {
+                        identifier: 'email',
+                        rules: [
+                            {
+                            type: 'empty',
+                            prompt: 'Please enter a value'
+                            },
+                            {
+                                type   : 'email',
+                                prompt : 'Please enter a valid e-mail'
+                            }
+                        ]
+                    },
+                    name: {
+                        identifier: 'name',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a name'
+                        }]
+                    },
+                    password: {
+                        identifier: 'password',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a password'
+                        }]
+                    }
+                }
+            })
+            //TODO: Fix the submit functionality
+            .submit(function(evt) {
+                evt.preventDefault();
+                alert('submitted');
+            });
