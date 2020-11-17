@@ -64,9 +64,4 @@ router.get('/donate', function(req, res, next) {
 //   res.render('login', { title: 'Log in' });
 // });
 
-// Create Account page
-router.get('/createaccount', function(req, res, next) {
-  res.render('createaccount', { title: 'Create Account' });
-});
-
 module.exports = router;
