@@ -1,3 +1,13 @@
+//-
+  register.pug
+  D-Code-Web-App
+  Authors: Team 4
+  Date: 11/15/2020
+  License: GPL 3.0
+
+  Contains the html elements for the register page.
+  Also contains javascript for form validation and submission behavior.
+
 extends layout
 
 block content
@@ -5,32 +15,75 @@ block content
     div.ui.hidden.divider
     div.ui.hidden.divider
     div.ui.hidden.divider
-    div.ui.middle.aligned.center.aligned.three.column.grid
-        div.column.grid
 
-        div.column.grid
-            .row.grid
-                h2.ui.centered.header.grid
-                    div.content.grid Welcome to to the D-Code family!!
-                div.ui.hidden.divider
-                div.ui.hidden.divider
-                h3.content.grid Register Here!
-            div.row.grid
-                div.ui.form.large.form(action="/users/register", method="post")
-                    div.ui.large.centered.segment.grid
-                        div.field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.user.icon.grid
-                                input(type="text", name="email", placeholder="your email").grid
-                        .field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.user.icon.grid
-                                input(type="text", name="name", placeholder="your name").grid    
-                        div.field.grid.row
-                            div.ui.left.icon.input.grid
-                                i.lock.icon.grid
-                                input(type="password",name="password",placeholder="password").grid
-                        div.field.grid.row
-                            button.ui.fluid.large.black.button(type="submit").grid Register 
-        div.column.grid
-               
+    form
+        div.ui.middle.aligned.center.aligned.three.column.grid
+            div.column.grid
+
+            div.column.grid
+                .row.grid
+                    h2.ui.centered.header.grid
+                        div.content.grid Welcome to to the D-Code family!!
+                    div.ui.hidden.divider
+                    div.ui.hidden.divider
+                    h3.content.grid Register Here!
+                div.row.grid
+                    div.ui.form.large.form(action="/users/register", method="post")
+                        div.ui.large.centered.segment.grid
+                            div.field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.user.icon.grid
+                                    input(type="text", name="email", placeholder="your email").grid
+                            .field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.user.icon.grid
+                                    input(type="text", name="name", placeholder="your name").grid    
+                            div.field.grid.row
+                                div.ui.left.icon.input.grid
+                                    i.lock.icon.grid
+                                    input(type="password",name="password",placeholder="password").grid
+                            div.field.grid.row
+                                button.ui.fluid.large.black.button(type="submit").grid Register 
+            div.column.grid
+    
+    // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
+    script.
+        $('form')
+            .form({
+                on: 'blur',
+                fields: {
+                    //rules for each field
+                    name: {
+                        identifier: 'name',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a value'
+                        }]
+                    },
+                    email: {
+                        identifier: 'email',
+                        rules: [
+                            {
+                            type: 'empty',
+                            prompt: 'Please enter a value'
+                            },
+                            {
+                                type   : 'email',
+                                prompt : 'Please enter a valid e-mail'
+                            }
+                        ]
+                    },
+                    password: {
+                        identifier: 'password',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a value'
+                        }]
+                    }
+                }
+            })
+            //TODO: Fix the submit functionality
+            //- .submit(function(evt) {
+            //-     evt.preventDefault();
+            //-     alert('submitted');
+            //- });
