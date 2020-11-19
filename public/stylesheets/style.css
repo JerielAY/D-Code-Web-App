@@ -2,6 +2,20 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+#Meet {
+  font-style: italic;
+  color: #e1f5bc;
+}
+#description {
+  font-style: italic;
+}
+
+#jumbo{
+  background-color: #e1f5bc;
+}
+#jumboI{
+  background-color: black;
+}
 
 a {
   color: #00B7FF;

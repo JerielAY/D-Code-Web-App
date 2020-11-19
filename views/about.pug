@@ -10,7 +10,64 @@
 extends layout
 
 block content
-    h1 About Us Page
-    p We are the Davidson chapter of D-Code, an inclusivity in tech initiative.
+
+    div(id="jumbo").large.jumbotron.jumbotron-fluid
+      .container
+        h1(id="description").ui.centered.header We are the Davidson chapter of D-Code, an inclusivity in tech initiative.
+
+    .ui.hidden.divider
+    .ui.hidden.divider
+    div(id="jumboI").large.jumbotron.jumbotron-fluid
+      .container
+        h2(id="Meet").ui.centered.header Meet Our Team!!
+        img.ui.centered.large.image(src="/public/img/E-boardCollage.png")
+    .ui.hidden.divider
+    .ui.link.stackable.cards
+      .card
+        .image
+          img(src='/public/img/IMG_4029.jpg')
+        .content
+          .header Khalil Adams
+          .description
+            | Khalil is one of our co-founders
+        .extra.content
+          //- span.right.floated
+          //-   | Joined in 2013
+          span
+            i.user.icon
+            |         Comp Sci major
+      .ui.hidden.divider
+      .card
+        .image
+          img(src='/public/img/abbi.jpg')
+        .content
+          .header Abigail Santiago
+          .description
+            | Abby is one of our cofounders
+        .extra.content
+          //- span.right.floated
+          //-   | Joined in 2013
+          span
+            i.user.icon
+            |         Comp Sci major
+      .ui.hidden.divider
+      .card
+        .image
+          img(src='/public/img/IMG_4021.jpg')
+        .content
+          .header Wilbert Garcia
+          .description
+            | Wilbur is our project manager
+        .extra.content
+          //- span.right.floated
+          //-   | Joined in 2013
+          span
+            i.user.icon
+            |         Comp Sci major
+      
+
     h2 Contact us at:
     a(href='mailto:dcode.davidson@gmail.edu') dcode.davidson@gmail.edu
+    h2 Follow Us on Instagram @DcodeDavidson:
+    i.instagram.icon
+
