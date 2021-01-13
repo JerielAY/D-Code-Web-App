@@ -1,10 +1,16 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+div{
+  padding: 0;
+}
+#about{
+  background-color:white;
+}
 #Meet {
-  font-style: italic;
-  color: #e1f5bc;
+  font-family: 'Neucha', cursive;
+  color: #eb6841;
+  font-size: 300%;
 }
 #home{
   font-style: italic;
@@ -15,13 +21,72 @@ body {
   font-style: italic;
 }
 
-#jumbo{
+#jumbo1{
   background-color: #e1f5bc;
 }
-#jumboI{
-  background-color: black;
+#jumbo2{
+  background-color: white;
+}
+#jumbo3{
+  background-color: rgba(130, 170, 245, 0.699);
 }
 
+#Mission{
+  font-family: 'Dancing Script', cursive;
+  font-size: 800%;
+
+}
+
+#whatyoucando{
+  font-family: 'Neucha',cursive;
+}
+
+#jumbo4{
+  background-color: white;
+}
+#jumbo5{
+  background-color: #eb6841;
+}
+
+#themenu {
+  background-color: black;
+  color: #e1f5bc;
+}
+#test {
+  color: #e1f5bc;
+}
 a {
   color: #00B7FF;
+}
+
+/* //Typewriter Effect */
+
+/* Global */
+html{
+  /* min-height: 100%; */
+  overflow: hidden;
+}
+
+.line-1{
+    /* width: 30em; */
+    margin: auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 5s steps(50) .5s 1 normal both,
+  blinkTextCursor 1000ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 100vw;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }

@@ -9,65 +9,67 @@
 
 extends layout
 
-block content
 
-    div(id="jumbo").large.jumbotron.jumbotron-fluid
+block content
+  div#about
+    div(id="jumbo1").large.jumbotron.jumbotron-fluid
       .container
         h1(id="description").ui.centered.header We are the Davidson chapter of D-Code, an inclusivity in tech initiative.
-
-    .ui.hidden.divider
-    .ui.hidden.divider
-    div(id="jumboI").large.jumbotron.jumbotron-fluid
+    div(id="jumbo2").jumbotron.jumbotron-fluid
       .container
-        h2(id="Meet").ui.centered.header Meet Our Team!!
+        h1(id="Mission").ui.centered.header Our Mission
+        h1(id="Statement").ui.centered.header We are committed to improving the relationship between Davidson students, the art of computing, programming, and all-things digital.
+        .ui.hidden.divider
+        .ui.hidden.divider
+        .ui.hidden.divider
+    div(id="jumbo3").jumbotron.jumbotron-fluid
+      .container
+        h1#whatyoucando.ui.centered.header Join Us and you can:
+        h2#whatyoucando Start learning a language with the assistance and support of your more-experienced peers through interactive challenges
+
+        h2#whatyoucando Work on a project of your choice with a small group, such as a website, application, or game certifications and gain marketable career skills (i.e. Automation, Git, Command Line, Web Scraping)
+
+        h2#whatyoucando Bring your ultra wavy and slick app idea to fruition
+
+        h2#whatyoucando Learn more about how your smartphone and computer “magically” do stuff
+
+        h2#whatyoucando Get to know the Davidson computer science students and faculty
+
+        h2#whatyoucando See if the vast field of technology has something in store for you
+
+        h2#whatyoucando Gain access to a unified platform for learning resources and opportunities for internships and research
+        .ui.hidden.divider
+        .ui.hidden.divider
+        .ui.hidden.divider
+        .ui.hidden.divider
+    div(id="jumbo4").jumbotron.jumbotron-fluid
+      .container
+        h1(id="Meet").ui.centered.white.header Meet Our Team!!
         img.ui.centered.large.image(src="/public/img/E-boardCollage.png")
-    .ui.hidden.divider
-    .ui.link.stackable.cards
-      .card
-        .image
+      .ui.hidden.divider
+    div(id="jumbo5").jumbotron.jumbotron-fluid
+      .ui.hidden.divider
+      .ui.centered.large.images
+        .ui.centered.header Khalil Adams
+        .ui.rounded.image
           img(src='/public/img/IMG_4029.jpg')
-        .content
-          .header Khalil Adams
-          .description
-            | Khalil is one of our co-founders
-        .extra.content
-          //- span.right.floated
-          //-   | Joined in 2013
-          span
-            i.user.icon
-            |         Comp Sci major
-      .ui.hidden.divider
-      .card
-        .image
+        .ui.hidden.divider
+        .ui.rounded.image
           img(src='/public/img/abbi.jpg')
-        .content
-          .header Abigail Santiago
-          .description
-            | Abby is one of our cofounders
-        .extra.content
-          //- span.right.floated
-          //-   | Joined in 2013
-          span
-            i.user.icon
-            |         Comp Sci major
-      .ui.hidden.divider
-      .card
-        .image
-          img(src='/public/img/IMG_4021.jpg')
-        .content
-          .header Wilbert Garcia
-          .description
-            | Wilbur is our project manager
-        .extra.content
-          //- span.right.floated
-          //-   | Joined in 2013
-          span
-            i.user.icon
-            |         Comp Sci major
+        .ui.hidden.divider
+        .ui.rounded.image
+            img(src='/public/img/IMG_4021.jpg')
+        .ui.hidden.divider
+        .ui.rounded.image
+            img(src='/public/img/yessir_2.jpg')
+        .ui.hidden.divider
+        .ui.rounded.image
+            img(src='/public/img/me (1).jpg')
+
       
 
     h2 Contact us at:
     a(href='mailto:dcode.davidson@gmail.edu') dcode.davidson@gmail.edu
-    h2 Follow Us on Instagram @DcodeDavidson:
+    h2 Follow Us on Instagram @DcodeDavidson
     i.instagram.icon
 
