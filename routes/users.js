@@ -10,7 +10,7 @@ var bodyParser = require("body-parser");
 var router = express.Router();
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
-const { db, User } = require("../models");
+const { db, User, connectDB} = require("../models/index.js");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -20,10 +20,14 @@ router.get('/', function(req, res, next) {
 
 //setting up response to parse user entered data on register page
 router.post("/register", function(req, res, next) {
-  const name = req.body.name;
-  const email = req.body.email;
-  db.registerNewUser({ name, email });
-  req.session.username = name;
+  console.log("this is db");
+  console.log(db);
+  console.log("In the register post function");
+  let usersname = "Tom";
+  let usersemail = "tom@test.com";
+  const testperson = db.registerNewUser({ usersname, usersemail });
+  console.log(testperson);
+  req.session.username = usersname;
   res.redirect("/")
 });
 

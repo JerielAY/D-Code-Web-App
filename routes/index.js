@@ -7,7 +7,7 @@
 
 var express = require('express');
 var router = express.Router();
-const { User, Event, Project } = require("../models");
+const { User, Event, Project } = require("../models/index.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

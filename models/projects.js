@@ -7,20 +7,26 @@
 
 const { Schema, model } = require("mongoose");
 
-// // Schema for events information relating to each project.
-// const EventsSchema = new Schema({type: Schema.Types.ObjectID,
-//  ref: "Event"});
+
+//Schema for project member
+const memberSchema = new Schema({ name: String, email: String,});
 
 // Schema for each project.
-const ProjectSchema = new Schema({name: String,
-  description: String, events: [{type: Schema.Types.ObjectId, ref: "Event"}] });
+const projectSchema = new Schema({name: String, description: String, members: {type: [memberSchema]} });
 
-// Schema for project list.
-const projectSchema = new Schema({
-  projects : [ProjectSchema]
-});
+// Schema for a projects list.
+const projectsSchema = new Schema({type: [projectSchema]});
 
-// Instantiate projects information.
-const Projects = model("Projects", projectSchema, "projects");
 
-module.exports = Projects;
+// Instantiate member 
+const Member = model("Member", memberSchema);
+
+// Instantiate project 
+const Project = model("Project", projectSchema);
+
+// Instantiate projects 
+const Projects = model("Projects", projectsSchema);
+
+
+
+module.exports = Project, Member, Projects;

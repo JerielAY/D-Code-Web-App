@@ -5,19 +5,24 @@
 // License: GPL 3.0
 // Instantiates and maintains user information with the MongoDB database.
 
+const { Timestamp } = require("mongodb");
 const { Schema, model } = require("mongoose");
 
 // Schema for information relating to each user.
 const userSchema = new Schema({
   username: {
     type: String,
-    unique: true
+    unique: true,
+    required:true,
   },
   email: {
     type: String,
-    unique: true
+    unique: true,
   },
-  projects: { type: Schema.Types.ObjectId, ref: 'Projects' }
+  projects: { 
+    type: Schema.Types.Array, ref: 'Projects',
+  },
+  timestamps: true,
 });
 
 // Get user information from the login.
@@ -34,6 +39,6 @@ userSchema.statics.findByLogin = async function(login) {
 };
 
 // Instantiate user information.
-const User = model("User", userSchema, "users");
+const User = model("User", userSchema);
 
 module.exports = User;

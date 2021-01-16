@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
 //allow the app to store sessions in the users cookies
 app.use(session({ secret: "D-CODE secret session words", cookie: {} }));
 

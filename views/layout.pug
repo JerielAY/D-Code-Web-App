@@ -33,15 +33,6 @@ html
         body {
           background-color: #000000;
         }
-        /*h3, p, a {
-          color: #e1f5bc;
-        }
-        , h3, a {
-          font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
-        }
-        p {
-          font-family: Georgia, Times, serif;
-        }*/
         a:hover {
           text-decoration: underline;
         }
@@ -53,20 +44,14 @@ html
         i.ui.dropdown.icon
         div#themenu.ui.dropdown.menu
           .ui.item.dropdown
-            a.item(href="/")(style='color:#e1f5bc;') Home
-            a.item(href="/projects")(style='color:#e1f5bc;') Projects
-            a.item(href="/calendar")(style='color:#e1f5bc;') Calendar
-            a.item(href="/about")(style='color:#e1f5bc;') About Us
-            a.item(href="/donate")(style='color:#e1f5bc;') Donate
-            a.item.right.aligned(href="/login")(style='color:#e1f5bc;') Login
+            a.item(href="/" style='color:#e1f5bc;') Home
+            a.item(href="/projects" style='color:#e1f5bc;') Projects
+            a.item(href="/calendar" style='color:#e1f5bc;') Calendar
+            a.item(href="/about" style='color:#e1f5bc;') About Us
+            a.item(href="/donate" style='color:#e1f5bc;') Donate
+            a.item.right.aligned(href="/login" style='color:#e1f5bc;') Login
+            a.item.right.aligned(href="/logout" style='color:#e1f5bc;') Logout
 
-    //- div.ui.top.attached.tabular.menu
-      a.item(href="/")(style='color:#e1f5bc;') Home
-      a.item(href="/projects")(style='color:#e1f5bc;') Projects
-      a.item(href="/calendar")(style='color:#e1f5bc;') Calendar
-      a.item(href="/about")(style='color:#e1f5bc;') About Us
-      a.item(href="/donate")(style='color:#e1f5bc;') Donate
-      a.item.right.aligned(href="/login")(style='color:#e1f5bc;') Login
     a(href="/index").ui.centered.medium.image
       img(src="/public/img/logo.jpeg")
     block content

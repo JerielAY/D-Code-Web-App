@@ -16,7 +16,7 @@ block content
     div.ui.hidden.divider
     div.ui.hidden.divider
 
-    form
+    form#registration(action="/users/register", method="post")
         div.ui.middle.aligned.center.aligned.three.column.grid
             div.column.grid
 
@@ -28,22 +28,21 @@ block content
                     div.ui.hidden.divider
                     h3.content.grid Register Here!
                 div.row.grid
-                    div.ui.form.large.form(action="/users/register", method="post")
-                        div.ui.large.centered.segment.grid
-                            div.field.grid.row
-                                div.ui.left.icon.input.grid
-                                    i.user.icon.grid
-                                    input(type="text", name="email", placeholder="your email").grid
-                            .field.grid.row
-                                div.ui.left.icon.input.grid
-                                    i.user.icon.grid
-                                    input(type="text", name="name", placeholder="your name").grid    
-                            div.field.grid.row
-                                div.ui.left.icon.input.grid
-                                    i.lock.icon.grid
-                                    input(type="password",name="password",placeholder="password").grid
-                            div.field.grid.row
-                                button.ui.fluid.large.black.button(type="submit").grid Register 
+                    div.ui.large.centered.segment.grid
+                        div.field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.user.icon.grid
+                                input(type="text", name="email", placeholder="your email").grid
+                        div.field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.user.icon.grid
+                                input(type="text", name="name", placeholder="your name").grid    
+                        div.field.grid.row
+                            div.ui.left.icon.input.grid
+                                i.lock.icon.grid
+                                input(type="text",name="password",placeholder="password").grid
+                        div.field.grid.row
+                            button.ui.fluid.large.black.button(type="submit").grid Register 
             div.column.grid
     
     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
