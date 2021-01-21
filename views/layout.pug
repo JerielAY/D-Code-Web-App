@@ -44,7 +44,7 @@ html
 
   body
     // navigation dropdown at top of the page
-    #test.ui.menu
+    #topmenu.ui.top.fixed.menu
       div#test.ui.item.simple.dropdown Menu
           i.ui.dropdown.icon
           div#themenu.ui.dropdown.menu
@@ -56,6 +56,5 @@ html
               a.item(href="/donate" style='color:#e1f5bc;') Donate
               a.item.right.aligned(href="/login" style='color:#e1f5bc;') Login
               a.item.right.aligned(href="/logout" style='color:#e1f5bc;') Logout
-      //- a(href="/index")#logo.ui.centered.item.image
-        img(src="/public/img/logo.jpeg")
+      
     block content

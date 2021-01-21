@@ -13,19 +13,60 @@ div{
   padding: 0;
 }
 
+/* Home page stuff */
+#home{
+  background-color: black;
+}
+#homejumbo{
+  background-color: black;
+  margin: 0%;
+}
+
+#hometext{
+  font-family: 'Imbue',serif;
+  font-size: 300%;
+  color: #e1f5bc;
+}
+
+#themenu {
+  background-color:black;
+  color:#e1f5bc;
+  font-family: 'Imbue',serif;
+  /* margin: 0%; */
+  /* padding: 0%; */
+}
+#test {
+  background-color: black;
+  color: #e1f5bc;
+  font-family: 'Imbue',serif;
+}
+#topmenu {
+  background-color: black;
+  color: #e1f5bc;
+  font-family: 'Imbue',serif;
+}
 #logo{
-  /* padding-top: 5%;
-  padding-bottom: 2%; */
+  padding-top: 5%;
+  padding-bottom: 2%;
 }
 
 #logohome{
   padding-top: 5%;
   padding-bottom: 2%;
 }
-#test{
-  background-color: transparent;
-  padding: 2%;
+
+/* Blinking effect for welcome message */
+.blinking{
+  animation:blinkingText 2.2s infinite;
 }
+@keyframes blinkingText{
+  0%{     color: var(--tertiary-color);    }
+  49%{    color: var(--tertiary-color); }
+  60%{    color: transparent; }
+  99%{    color:transparent;  }
+  100%{   color: var(--tertiary-color);    }
+}
+
 
 /* About page stuff */
 #about{
@@ -42,10 +83,6 @@ div{
   filter:brightness(100%);
 }
 
-#hometext{
-  font-style: italic;
-  color: #e1f5bc;
-}
 
 #description {
   font-style: italic;
@@ -53,6 +90,7 @@ div{
 
 #jumbo1{
   background-color: #e1f5bc;
+  /* padding: 12%; */
 }
 #jumbo2{
   background-color: white;
@@ -106,27 +144,6 @@ div{
   background-color:  #fcf9c4;
 }
 
-#home{
-  background-color: black;
-}
-#homejumbo{
-  background-color: black;
-  margin: 0%;
-}
-
-#themenu {
-  background-color:black;
-  color:#e1f5bc;
-  margin: 0%;
-  padding: 0%;
-}
-#test {
-  background-color: black;
-  padding: 1%;
-  color: #e1f5bc;
-  margin: 0%;
-}
-
 a {
   color: #00B7FF;
 }
@@ -151,37 +168,8 @@ a {
   font-family: 'Imbue',serif;
 }
 
-/* //Typewriter Effect */
 
-/* Global */
-html{
-  /* min-height: 100%; */
-  overflow: hidden;
-}
 
-.line-1{
-    /* width: 30em; */
-    margin: auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 200%;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-}
-
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 5s steps(50) .5s 1 normal both,
-  blinkTextCursor 1000ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  /* from{width: 0;} */
-  to{width: 100vw;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
 /* calendar page stuff */
 #calendar{
   border: none;
@@ -190,6 +178,8 @@ html{
   background-image: linear-gradient(black,white);
   margin: 0%;
 } */
+
+
 
 /* Projects page stuff */
 #projects{
