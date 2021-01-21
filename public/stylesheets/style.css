@@ -1,20 +1,48 @@
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  border: 3px 3px black;
 }
+:root{
+  --main-color: black;
+  --secondary-color: rgb(5, 122, 122);
+  --tertiary-color: #e1f5bc;
+}
+
 div{
   padding: 0;
 }
+
+#logo{
+  /* padding-top: 5%;
+  padding-bottom: 2%; */
+}
+
+#logohome{
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+#test{
+  background-color: transparent;
+  padding: 2%;
+}
+
+/* About page stuff */
 #about{
   background-color:white;
 }
+#headingcontainer {
+  padding: 0%;
+  margin: 0%;
+}
 #Meet {
-  font-family: 'Neucha', cursive;
-  color: #eb6841;
-  font-size: 700%;
+  font-family: 'Imbue', serif;
+  color:  #fcf9c4;
+  font-size: 800%;
   filter:brightness(100%);
 }
 
-#home{
+#hometext{
   font-style: italic;
   color: #e1f5bc;
 }
@@ -30,17 +58,22 @@ div{
   background-color: white;
 }
 #jumbo3{
-  background-color: rgba(130, 170, 245, 0.699);
+  /* background-image: linear-gradient(white,rgb(123, 169, 253)); */
+  background-color:white;
   margin: 0%;
+}
+#Statement{
+  font-family: 'Imbue',serif;
 }
 
 #Mission{
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Imbue', serif;
   font-size: 800%;
 }
 
 #whatyoucando{
-  font-family: 'Neucha',cursive;
+  font-family: 'Imbue',serif;
+  text-align: center;
 }
 
 /* Special shout out to https://coder-coder.com/background-image-opacity/ */
@@ -59,9 +92,6 @@ div{
 
 #jumbo4{
   padding: 20%;
-  /* background-color: white; */
-  /* background-image: url("/public/img/E-boardCollage.png"); */
-  /* background-size:cover; */
   position: relative;
   height: 100vh;
   width: 100%;
@@ -71,35 +101,54 @@ div{
   margin: 0%;
   /* filter: brightness(50%); */
 }
+
 #jumbo5{
-  background-color: #eb6841;
+  background-color:  #fcf9c4;
+}
+
+#home{
+  background-color: black;
+}
+#homejumbo{
+  background-color: black;
+  margin: 0%;
 }
 
 #themenu {
-  background-color: black;
-  color: #e1f5bc;
+  background-color:black;
+  color:#e1f5bc;
+  margin: 0%;
+  padding: 0%;
 }
 #test {
+  background-color: black;
+  padding: 1%;
   color: #e1f5bc;
+  margin: 0%;
 }
+
 a {
   color: #00B7FF;
 }
 #nickname{
   font-size: 150%;
   color:white;
-  font-family: 'Neucha',cursive;
+  font-family: 'Imbue',serif;
 }
 #Khalil{
-  font-size: 150%;
+  font-size: 1.6vw;
   color:white;
   background-color:  black;
-  font-family: 'Neucha',cursive;
+  font-family: 'Imbue',serif;
 }
+#aboutimages{
+  margin-top: 0%;
+}
+
 #bio{
-  font-size: 150%;
-  color:white;
-  font-family: 'Neucha',cursive;
+  font-size: 1.8vw;
+  color:black;
+  font-family: 'Imbue',serif;
 }
 
 /* //Typewriter Effect */
@@ -126,10 +175,129 @@ html{
   blinkTextCursor 1000ms steps(44) infinite normal;
 }
 @keyframes typewriter{
-  from{width: 0;}
+  /* from{width: 0;} */
   to{width: 100vw;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
   to{border-right-color: transparent;}
+}
+/* calendar page stuff */
+#calendar{
+  border: none;
+}
+/* #calendarblend{
+  background-image: linear-gradient(black,white);
+  margin: 0%;
+} */
+
+/* Projects page stuff */
+#projects{
+  background-color:white;
+}
+
+#jumbop1::before{
+  content: "";
+  background-image: url("/public/img/projects.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* opacity: .8; */
+  filter: brightness(100%);
+}
+
+#jumbop1{
+  padding: 0%;
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin: 0%;
+  text-align: left;
+  /* filter: brightness(50%); */
+}
+
+#workingon{
+  font-family: 'Itim', cursive;
+  color: black;
+  font-size: 450%;
+  filter:brightness(100%);
+  opacity: 1;
+  text-decoration: blink;
+
+}
+#workingon:hover{
+  color: white;
+  opacity: 1;
+  filter: brightness(100%);
+  transition: color .7s;
+}
+
+#workingonsegment{
+  opacity: .5;
+  scroll-behavior: smooth;
+  transition: background-color .7s;
+}
+
+#workingonsegment:hover{
+  background: rgba(192, 192, 192, 0.39) ;/* make this whatever you want */
+  opacity: 1;
+}
+
+
+#jumbop2{
+  font-size: 500%;
+  background-color: white;
+}
+#jumbop3{
+  background-image: linear-gradient(white,#fffdd0);
+  /* background-image: linear-gradient(to right,white,rgba(154, 154, 224, 0.973)); */
+  margin: 0%;
+}
+#jumbop4{
+  background-image: linear-gradient(#fffdd0,#fcf9c4);
+  margin: 0%;
+}
+#jumbop5{
+  /* font-size: 500%; */
+  background-color: #fcf9c4;
+  margin: 0%;
+}
+
+#whatisaproject{
+  font-family:'Imbue',serif ;
+}
+
+#welcomeuser{
+  color: #e1f5bc;
+}
+
+#currentprojects{
+  font-size: 700%;
+  font-family: 'Imbue', serif;
+}
+#projecttitles{
+  font-size: 4.6vw;
+
+  font-family: 'Imbue', serif;
+}
+#projectdescriptions{
+  font-family: 'Imbue', serif;
+  font-size: 3vw;
+}
+#joinheaders{
+  font-family: 'Imbue', serif;
+  font-size: 300%;
+}
+
+#projectgrid{
+  padding: 5%;
+}
+#joinform{
+  display: none;
 }

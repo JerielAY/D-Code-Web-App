@@ -10,10 +10,9 @@
 extends layout
 
 block content
+  //- div#calendarblend.large.jumbotron.jumbotron-fluid
   div.ui.middle.aligned.center.aligned.grid
-      div.column
-        h1 Calendar
-        //- Basic Google Calendar Implementation
-        //- Calendar link: https://calendar.google.com/calendar/u/0?cid=Y185cHIxdnIwN3A1YXVpMGpmdXIzcW8zZXM4b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-        //- Calendar should be accessible by everyone with a Davidson account
-        iframe(src='https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y185cHIxdnIwN3A1YXVpMGpmdXIzcW8zZXM4b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&title=D-Code%20Events' style='border:solid 1px #777' width='800' height='600' frameborder='0' scrolling='no')
+    //- Basic Google Calendar Implementation
+    //- Calendar link: https://calendar.google.com/calendar/u/0?cid=Y185cHIxdnIwN3A1YXVpMGpmdXIzcW8zZXM4b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+    //- Calendar should be accessible by everyone with a Davidson account
+    iframe#calendar(src='https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y185cHIxdnIwN3A1YXVpMGpmdXIzcW8zZXM4b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&title=D-Code%20Events' style='border:solid 1px #777' width='100%' height='670px' frameborder='0' scrolling='no')

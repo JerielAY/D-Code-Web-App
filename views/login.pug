@@ -16,28 +16,28 @@ block content
     div.ui.hidden.divider
     div.ui.hidden.divider
 
+    h2.ui.header.inverted.centered Sign in here
+
     form(action="/users/login", method="post")
-        div.ui.middle.aligned.center.aligned.three.column.grid
-            div.column.grid
-                .row.grid
-                    h2.ui.centered.header.grid
-                          div.content.grid.centered(style='color:#e1f5bc; font-family:Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;') 
-                            div.ui.header.inverted.centered Sign in here
+        div.ui.centered.three.column.grid
+            div.ui.centered.column
                 div.ui.hidden.divider
-                div.row.grid
+                div.centered.row
                     div.ui.large.centered.segment.grid
-                        div.field.grid.row
+                        div.field.row.centered
                             div.ui.left.icon.input.grid
                                 i.user.icon.grid
                                 input(type="text", name="email", placeholder="your email").grid 
-                        div.field.grid.row
+                        div.field.row.centered
                             div.ui.left.icon.input.grid
                                 i.lock.icon.grid
                                 input(type="password",name="password",placeholder="password").grid
-                        div.field.grid.row
-                            button.ui.fluid.large.black.button(type="submit").grid Login 
-                    .ui.centered.banner.grid 
-                        a.item(href="/register") New to the D-Code family? Sign up here!
+                        div.field.row.centered
+                            button#login.ui.fluid.large.black.button(type="submit").grid Login 
+    .ui.centered.banner.grid 
+        a.item(href="/register") New to the D-Code family? Sign up here!
+
+
 
     // Form validation script (see https://fomantic-ui.com/behaviors/form.html)
     script.
@@ -76,4 +76,6 @@ block content
                     }
                 }
             });
+        
+        
 

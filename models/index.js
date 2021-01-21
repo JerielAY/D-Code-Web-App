@@ -1,25 +1,45 @@
 
 // const DATABASE_URL = "mongodb+srv://D-CODE:Davidson6@cluster0.ewwyp.mongodb.net/D-Code-Webapp?retryWrites=true&w=majority";
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://D-CODE:davidson6@cluster0.ewwyp.mongodb.net/D-CODE?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true },{ useUnifiedTopology: true });
-const { User, Projects } = require("../models");
-client.connect(function(err, client) {
-  const myclient = client;
-  if(!err) {
-    console.log("We are connected");
+const mongoose = require("mongoose");
+const User = require("./user");
+const Projects = require("./projects");
+const uri = "mongodb+srv://D-CODE:davidson6@cluster0.ewwyp.mongodb.net/DCODE?retryWrites=true&w=majority&ssl=true";
+// mongoose.connect(uri, { useNewUrlParser: true }, { useUnifiedTopology: true });
+try {
+  mongoose.connect( uri, {useNewUrlParser: true, useUnifiedTopology: true}, () =>
+  console.log("connected"));    
+}catch (error) { 
+  console.log("could not connect");    
+}
+
+mongoose.connection.on('error', err => {
+  console.log("Something happened to the connection");
+  console.log(err);
+});
+
+// const connection = mongoose.connection;
+
+// connection.once("open", function() {
+//   console.log("MongoDB database connection established successfully");
+// });
+
+
+module.exports = {
+  User,
+  Projects,
+  db: {
+    registerNewUser
   }
+};
 
-
-    /**
+/**
   * creates a new user and returns the document with their data from the database
   * @param username of the user
   * @param email of the user
   */
   async function createUser({ username, email }) {
-    const result = await User.create({ username, email, function(err) {if(err) return handleError(err); } });
-    return  result;
-
+    return await User.create({ username, email });
+   
   }
 
   /**
@@ -28,15 +48,20 @@ client.connect(function(err, client) {
   * @returns a new object with the user and their projects list
   */
   async function createProjects({ owner }) {
+    console.log({owner});
     // make a new empty projects list that's connected to its owner
-    const project = await Projects.create(owner);
+    const project = await Projects.create({owner});
 
   // connect the user object with the new project list
+  
   const user = await User.findById(owner._id);
   user.projects = project;
-  await user.save(function(err) {
-  if(err) return handleError(err);
-  });
+  await user.save(function (err) {
+  if (err){
+    console.log("there was an error in create projects");
+  };
+  console.log("saved");
+});;
 
   // return the project
   return project;
@@ -49,31 +74,10 @@ client.connect(function(err, client) {
   * @returns object with user and project properties
   */
   async function registerNewUser({ name, email }) {
-    const user = await createUser({ name, email });
-    console.log(user);
-    const projects = await createProjects(user);
+    const owner = await createUser({ username: name, email });
+    console.log(owner);
+    console.log(owner.id);
+    const projects = await createProjects({owner});
     console.log(projects);
-    return { user, projects };
+    return { owner, projects };
   }
-
-
-
-  module.exports = {
-    Projects,
-    client: {
-      registerNewUser
-    }
-  };
-
-});
-
-
-client.close();
-
-
-
-
-
-
-
-

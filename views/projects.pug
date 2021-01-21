@@ -10,16 +10,100 @@
 extends layout
 
 block content
-  h1(style='text-align:center;') Join a Project:
+  div#projects
+    //- div(id="jumbop1").large.jumbotron.jumbotron-fluid
+       
+        //- .ui.raised.segment#workingonsegment
+          a(href="#jumbop2")#workingon.bottom.aligned.ui.header Come see what we're working on     
+            i.ui.dropdown.icon
+    
+    #jumbop3.large.jumbotron.jumbotron-fluid
+    #jumbop4.large.jumbotron.jumbotron-fluid
+    #jumbop5.large.jumbotron.jumbotron-fluid
+      #currentprojects.ui.centered.header Current Projects
+      #projectgrid.ui.three.column.padded.grid
+          .ui.middle.aligned.row
+            .ui.middle.aligned.column 
+              #projecttitles.ui.centered.header Crypto Bot
+            .ui.column
+            .ui.column
+          .ui.middle.aligned.row
+            .ui.column
+              .ui.large.rounded.image
+                img(src="/public/img/crypto.jpeg")
+            .ui.ten.wide.column
+              #projectdescriptions.ui.top.aligned.header this is a bot that does crypto.this is a bot that does crypto.this is a bot that does crypto.this is a bot that does crypto.this is a bot that does crypto.this is a bot that does crypto.
+            .ui.column
+          .ui.middle.aligned.row
+              button#joinbuttons(type="submit").ui.black.fluid.massive.icon.button
+                |Join
+              #joinform.ui.raised.message
+                form.ui.form(action="", method="post")
+                  .field
+                    label First Name
+                    input(type='text' name='first-name' placeholder='First Name')
+                  .field
+                    label Last Name
+                    input(type='text' name='last-name' placeholder='Last Name')
+                  button.ui.button(type='submit') Submit
+          
+          //- this project
+          .ui.middle.aligned.row
+            .ui.middle.aligned.column 
+              #projecttitles.ui.centered.header Web Scraper
+            .ui.column
+            .ui.column
+          .ui.middle.aligned.row
+            .ui.column
+              .ui.large.rounded.image
+                img(src="/public/img/scraper.jpg")
+            .ui.ten.wide.column
+              #projectdescriptions.ui.top.aligned.header this is a bot that scrapes the web.this is a bot that scrapes the web.this is a bot that scrapes the web.this is a bot that scrapes the web.
+            .ui.column
+          .ui.middle.aligned.row
+              button#joinbuttons(type="submit").ui.black.fluid.massive.icon.button
+                |Join
+              #joinform.ui.raised.message
+                form.ui.form(action="", method="post")
+                  .field
+                    label First Name
+                    input(type='text' name='first-name' placeholder='First Name')
+                  .field
+                    label Last Name
+                    input(type='text' name='last-name' placeholder='Last Name')
+                  button.ui.button(type='submit') Submit
+         
+          //- this project 
+          .ui.middle.aligned.row
+            .ui.middle.aligned.column 
+              #projecttitles.ui.centered.header Pocket Stylist
+            .ui.column
+            .ui.column
+          .ui.middle.aligned.row
+            .ui.column
+              .ui.large.rounded.image
+                img(src="/public/img/pocketstylist.jpg")
+            .ui.ten.wide.column
+              #projectdescriptions.ui.top.aligned.header This is a personal pocket stylist.This is a personal pocket stylist.This is a personal pocket stylist.This is a personal pocket stylist.
+            .ui.column
+          .ui.middle.aligned.row
+              button#joinbuttons(type="submit").ui.black.fluid.massive.icon.button
+                |Join
+              #joinform.ui.raised.message
+                form.ui.form(action="", method="post")
+                  .field
+                    label First Name
+                    input(type='text' name='first-name' placeholder='First Name')
+                  .field
+                    label Last Name
+                    input(type='text' name='last-name' placeholder='Last Name')
+                  button.ui.button(type='submit') Submit
+              
+                        
 
-  div.ui.vertical.stripe.segment
-  div.ui.text.container
-    h3 Example Project 1
-    p
-      | This is a detailed description of the project. It also contains information about what sorts of skills are needed for the project.
-    button.ui.fluid.large.black.button Join
-    h4.ui.horizontal.header.divider
-    h3 Example Project 2
-    p
-      | This is a detailed description of the project. It also contains information about what sorts of skills are needed for the project.
-    button.ui.fluid.large.black.button Join
+
+
+
+          
+
+ 

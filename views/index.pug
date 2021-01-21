@@ -10,15 +10,18 @@
 extends layout
 
 block content
-  .ui.hidden.divider
-  .ui.hidden.divider
-  .ui.hidden.divider
-  .ui.hidden.divider
-  
-  h1(id="home").ui.header.centered.line-1.anim-typewriter Welcome to D-CODE, Davidson's Inclusivity in Tech Initiative!      
-  .ui.hidden.divider
-  .ui.hidden.divider
-  img.ui.centered.large.image(src="/public/img/hackers.jpg")
+  div#home
+    a(href="/index")#logohome.ui.medium.centered.image
+        img(src="/public/img/logo.jpeg")
+    .ui.hidden.divider
+    .ui.hidden.divider
+    .ui.hidden.divider    
+    h1(id="hometext").ui.header.centered.line-1.anim-typewriter Welcome to D-CODE, Davidson's Inclusivity in Tech Initiative!      
+    .ui.hidden.divider
+    .ui.hidden.divider
+    img.ui.centered.large.image(src="/public/img/hackers.jpg")
+    //- div(id="homejumbo").large.jumbotron.jumbotron-fluid
+
 
 //-     div.ui.top.attached.tabular.menu
 //-       a.item(href="/index") Home

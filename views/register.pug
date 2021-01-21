@@ -15,29 +15,24 @@ block content
     div.ui.hidden.divider
     div.ui.hidden.divider
     div.ui.hidden.divider
+    div.ui.centered.header(style='color:#e1f5bc; font-family:Neucha; font-size: 200%;') Welcome to to the D-Code family!
+
 
     form#registration(action="/users/register", method="post")
         div.ui.middle.aligned.center.aligned.three.column.grid
-            div.column.grid
-
-            div.column.grid
-                .row.grid
-                    h2.ui.centered.header.grid
-                        div.content.grid(style='color:#e1f5bc; font-family:Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;') Welcome to to the D-Code family!
-                    div.ui.hidden.divider
-                    div.ui.hidden.divider
-                    h3.content.grid Register Here!
+            div.column
+            div.column
                 div.row.grid
                     div.ui.large.centered.segment.grid
-                        div.field.grid.row
+                        div.field.row
                             div.ui.left.icon.input.grid
                                 i.user.icon.grid
                                 input(type="text", name="email", placeholder="your email").grid
-                        div.field.grid.row
+                        div.field.row
                             div.ui.left.icon.input.grid
                                 i.user.icon.grid
                                 input(type="text", name="name", placeholder="your name").grid    
-                        div.field.grid.row
+                        div.field.row
                             div.ui.left.icon.input.grid
                                 i.lock.icon.grid
                                 input(type="text",name="password",placeholder="password").grid
