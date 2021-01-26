@@ -5,7 +5,7 @@ body {
 }
 :root{
   --main-color: black;
-  --secondary-color: rgb(5, 122, 122);
+  --secondary-color: #fcf9c4;
   --tertiary-color: #e1f5bc;
 }
 
@@ -14,9 +14,37 @@ div{
 }
 
 /* Home page stuff */
-#home{
+
+/* #home{
   background-color: black;
+} */
+#home::before{
+  content: "";
+  background-image: url("/public/img/hackers.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* opacity: .8; */
+  filter: brightness(70%);
 }
+
+#home{
+  padding: 20%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  /* filter: brightness(50%); */
+  text-align: center;
+}
+
+
 #homejumbo{
   background-color: black;
   margin: 0%;
@@ -24,39 +52,51 @@ div{
 
 #hometext{
   font-family: 'Imbue',serif;
-  font-size: 300%;
+  font-size: 5vw;
   color: #e1f5bc;
+  position: relative;
+  padding-top: 2%;
+  white-space: nowrap;
 }
 
 #themenu {
   background-color:black;
   color:#e1f5bc;
   font-family: 'Imbue',serif;
+  font-size: 1.3vw;
   /* margin: 0%; */
-  /* padding: 0%; */
+  padding: 0%;
 }
 #test {
   background-color: black;
   color: #e1f5bc;
   font-family: 'Imbue',serif;
+  font-size: 1.5vw;
 }
 #topmenu {
   background-color: black;
   color: #e1f5bc;
   font-family: 'Imbue',serif;
+  font-size: 1vw;
+  padding: 0%;
 }
-#logo{
-  padding-top: 5%;
-  padding-bottom: 2%;
+#logomenu{
+  padding-top: 1%;
+  /* padding-bottom: 1%; */
+  align-self: center;
+  font-size: 2vw;
+
 }
 
 #logohome{
-  padding-top: 5%;
-  padding-bottom: 2%;
+  position: absolute;
+  /* padding-top: 5%; */
+  padding-bottom: 20%;
+  
 }
 
 /* Blinking effect for welcome message */
-.blinking{
+/* .blinking{
   animation:blinkingText 2.2s infinite;
 }
 @keyframes blinkingText{
@@ -65,12 +105,35 @@ div{
   60%{    color: transparent; }
   99%{    color:transparent;  }
   100%{   color: var(--tertiary-color);    }
-}
+} */
 
 
 /* About page stuff */
 #about{
   background-color:white;
+}
+
+#navigationsquares{
+  padding: 2%;
+  padding-top: 5%;
+}
+
+#picturetext{
+  position: 'absolute';
+}
+#longimages:hover{
+  background-color: blue;
+}
+#longimages{
+  size: 633.33,355.05;
+  position: relative;
+  display: flex;
+}
+#tallimages:hover{
+  background-color: blue;
+}
+#tallimages{
+  size: 306.66, 355.05;
 }
 #headingcontainer {
   padding: 0%;
@@ -83,14 +146,16 @@ div{
   filter:brightness(100%);
 }
 
-
 #description {
-  font-style: italic;
+  font-family: 'Imbue', serif;
+  font-size: 300%;
 }
 
 #jumbo1{
   background-color: #e1f5bc;
-  /* padding: 12%; */
+  padding: 10vh;
+  padding-bottom: 5vh;
+  padding-top: 14vh;
 }
 #jumbo2{
   background-color: white;
@@ -102,6 +167,7 @@ div{
 }
 #Statement{
   font-family: 'Imbue',serif;
+  font-size: 300%;
 }
 
 #Mission{
@@ -114,6 +180,10 @@ div{
   text-align: center;
 }
 
+#learnmore{
+  font-family: 'Imbue',serif;
+  font-size: 40%;
+}
 /* Special shout out to https://coder-coder.com/background-image-opacity/ */
 #jumbo4::before{
   content: "";
@@ -173,6 +243,8 @@ a {
 /* calendar page stuff */
 #calendar{
   border: none;
+  /* padding: 2%; */
+  padding-top: 2%;
 }
 /* #calendarblend{
   background-image: linear-gradient(black,white);

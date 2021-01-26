@@ -12,13 +12,37 @@ extends layout
 
 block content
   div#about
+    //- navigation squares
+    //- #navigationsquares.ui.three.column.middle.aligned.padded.grid 
+      .ui.centered.three.column.row
+        .ui.two.wide.column
+        .ui.six.wide.column
+          #picturetext.ui.header Project
+          a(href="#jumbop2")#longimages1.ui.fluid.rounded.image
+            img(src="/public/img/projects.jpg")
+        .ui.three.wide.column
+          #picturetext.ui.header Project
+          a(href="#jumbo4")#tallimages.ui.fluid.rounded.image
+            img(src="/public/img/team.jpg")
+      .ui.centered.three.column.row
+        .ui.two.wide.column
+        .ui.three.wide.column
+          #picturetext.ui.header Project
+          a(href="#Mission")#tallimages.ui.fluid.rounded.image
+            img(src="/public/img/ourmission.png")
+        .ui.six.wide.column
+          #picturetext.ui.header Project
+          a(href="#connect")#longimages.ui.fluid.rounded.image
+            img(src="/public/img/contactus.jpg")
+
+
     div(id="jumbo1").large.jumbotron.jumbotron-fluid
       .container
         h1(id="description").ui.centered.header We are the Davidson chapter of D-Code, an inclusivity in tech initiative.
     div(id="jumbo2").jumbotron.jumbotron-fluid
       .container
         h1(id="Mission").ui.centered.header Our Mission
-        h1(id="Statement").ui.centered.header We are committed to improving the relationship between Davidson students, the art of computing, programming, and all things digital.
+        h1(id="Statement").ui.centered.header WE ARE COMMITTED TO IMPROVING THE RELATIONSHIP BETWEEN DAVIDSON STUDENTS, THE ART OF COMPUTING, PROGRAMMING, AND ALL THINGS DIGITAL.
         .ui.hidden.divider
         .ui.hidden.divider
         .ui.hidden.divider
@@ -133,7 +157,7 @@ block content
         .ui.row
     
     div(id="jumbop2").large.jumbotron.jumbotron-fluid
-      #whatisaproject.ui.centered.huge.header WHAT IS A PROJECT?
+      #whatisaproject.ui.centered.huge.header Get Involved
       .ui.hidden.divider
       .ui.hidden.divider
       .ui.hidden.divider
@@ -164,9 +188,16 @@ block content
               img(src="/public/img/presentation.jpg")
           .ui.eight.wide.middle.aligned.column
             h2#whatisaproject.ui.header There aren't any deadlines, but we would love to see what you're working on in our end of the year showcase  
+        //- learn more blurb
+        .ui.center.row
+          .ui.column 
+          .ui.eight.wide.middle.aligned.column
+          .ui.four.wide.middle.aligned.column
+          .ui.three.wide.middle.aligned.column
+            a(href='/projects')#learnmore.ui Learn More
     
       .ui.hidden.divider
-    h2.ui.large.centered.header Connect with us!
+    h2#connect.ui.large.centered.header Connect with us!
     
     .ui.one.column.padded.middle.aligned.centered.grid
         //- h2 Send us an Email:

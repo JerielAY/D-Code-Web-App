@@ -47,6 +47,7 @@ html
     #topmenu.ui.top.fixed.menu
       div#test.ui.item.simple.dropdown Menu
           i.ui.dropdown.icon
+          .ui.item.right.menu
           div#themenu.ui.dropdown.menu
             .ui.item.dropdown
               a.item(href="/" style='color:#e1f5bc;') Home
@@ -54,7 +55,14 @@ html
               a.item(href="/calendar" style='color:#e1f5bc;') Calendar
               a.item(href="/about" style='color:#e1f5bc;') About Us
               a.item(href="/donate" style='color:#e1f5bc;') Donate
-              a.item.right.aligned(href="/login" style='color:#e1f5bc;') Login
-              a.item.right.aligned(href="/logout" style='color:#e1f5bc;') Logout
-      
+              //- a.item.right.aligned(href="/logout" style='color:#e1f5bc;') Logout
+      .ui.item
+      .ui.item
+      .ui.item
+      .ui.item
+      .ui.item
+      .ui.item
+      a(href="/index")#logomenu.ui.small.centered.image
+        img(src="/public/img/logo.jpeg")
+      a(href="/login" style='color:#e1f5bc;').ui.right.aligned.item Login
     block content
